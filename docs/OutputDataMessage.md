@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Transport** | **string** |  | [optional] 
 **UdpMetaData** | [**UDPMetadata**](UDPMetadata.md) |  | [optional] 
 **CoapMetaData** | [**CoAPMetadata**](CoAPMetadata.md) |  | [optional] 
+**MessageId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 <a name="listcollectiondata"></a>
 # **ListCollectionData**
-> ListDataResponse ListCollectionData (string collectionId, int? limit = null, string start = null, string end = null)
+> ListDataResponse ListCollectionData (string collectionId, int? limit = null, string start = null, string end = null, string offset = null)
 
 Get payloads
 
@@ -295,11 +295,12 @@ namespace Example
             var limit = 56;  // int? | Limit the number of payloads to return. The default is 512. (optional) 
             var start = start_example;  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
             var end = end_example;  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = offset_example;  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
                 // Get payloads
-                ListDataResponse result = apiInstance.ListCollectionData(collectionId, limit, start, end);
+                ListDataResponse result = apiInstance.ListCollectionData(collectionId, limit, start, end, offset);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -321,6 +322,7 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Limit the number of payloads to return. The default is 512. | [optional] 
  **start** | **string**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional] 
  **end** | **string**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional] 
+ **offset** | **string**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional] 
 
 ### Return type
 
